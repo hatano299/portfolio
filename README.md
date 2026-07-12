@@ -25,16 +25,15 @@ npm run dev
 ```
 src/
 ├── components/
-│   ├── common/        # 共通コンポーネント（Header, Layout, etc.）
+│   ├── common/        # 共通コンポーネント（Header, Layout, parts/）
 │   └── works/         # Works ページ用コンポーネント
-├── hooks/             # カスタムフック
 ├── lib/
-│   ├── common/        # 型定義
-│   └── data/          # 静的データ・定数
-└── pages/             # ページコンポーネント
+│   ├── data/          # 静的データ・定数
+│   └── types/         # 型定義
+├── pages/             # ページコンポーネント
+└── styles/            # グローバル CSS
 public/
-└── data/
-    └── works.json     # 作品データ
+└── images/            # 画像アセット
 ```
 
 ## Environment Variables
@@ -47,7 +46,7 @@ public/
 
 ## Adding Works
 
-`public/data/works.json` に以下の形式で追記する。
+`src/lib/data/works.json` に以下の形式で追記する。
 
 ```json
 [
@@ -61,6 +60,11 @@ public/
   }
 ]
 ```
+
+## Styling
+
+Tailwind CSS に統一する。  
+再利用パターンは `src/styles/globals.css` の `@layer components` に記述し、アニメーション等は同ファイルの `@layer` 外に記述する。
 
 ## Deploy
 
