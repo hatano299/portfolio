@@ -21,3 +21,21 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+@layer components {
+  .text-display {
+    @apply text-3xl font-bold text-[#AAAAAA] opacity-25;
+  }
+  .text-heading {
+    @apply text-6xl font-bold;
+  }
+  .text-card-heading {
+    @apply text-3xl font-bold;
+  }
+  .text-body {
+    @apply text-xl font-body;
+  }
+  .text-card-body {
+    @apply text-base font-body;
+  }
+}
