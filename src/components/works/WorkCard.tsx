@@ -9,7 +9,7 @@ type Props = {
 const WorkCard = ({ work }: Props): React.ReactElement => {
   return (
     <div className="w-2xs rounded-2xl border-2 border-double border-[#AAAAAA] p-6 shadow-lg shadow-gray-500/30">
-      <h3 className="text-3xl font-bold text-[#AAAAAA] opacity-25">WORK</h3>
+      <h3 className="text-display">WORK</h3>
       <Image
         src={work.imageUrl}
         alt={`${work.title}のイメージ`}
@@ -17,7 +17,7 @@ const WorkCard = ({ work }: Props): React.ReactElement => {
         height={160}
         className="rounded-2xl"
       />
-      <h3 className="text-3xl font-bold">{work.title}</h3>
+      <h3 className="text-card-heading">{work.title}</h3>
       <p className="text-base font-body">{work.createdAt}</p>
       <p className="text-base font-body">{work.description}</p>
       <div className="flex justify-end">
