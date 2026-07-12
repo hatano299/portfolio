@@ -1,8 +1,8 @@
 export type Work = {
-  id          : number;
-  title       : string;
-  imageUrl   : string;
-  description : string;
-  createdAt  : string;
-  linkUrl    : string;
-}
+  id: number;
+  title: string;
+  image_url: string;
+  description: string;
+  created_at: string;
+  link_url: string;
+};
