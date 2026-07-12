@@ -1,40 +1,67 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# Portfolio
+
+個人ポートフォリオサイト。
+
+## Tech Stack
+
+| 項目 | 技術 |
+|------|------|
+| Framework | Next.js 15 (Pages Router) |
+| Language | TypeScript |
+| Styling | Tailwind CSS v4 |
+| Deploy | Vercel |
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+[http://localhost:3000](http://localhost:3000) で確認。
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## Project Structure
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+```
+src/
+├── components/
+│   ├── common/        # 共通コンポーネント（Header, Layout, etc.）
+│   └── works/         # Works ページ用コンポーネント
+├── hooks/             # カスタムフック
+├── lib/
+│   ├── common/        # 型定義
+│   └── data/          # 静的データ・定数
+└── pages/             # ページコンポーネント
+public/
+└── data/
+    └── works.json     # 作品データ
+```
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+## Environment Variables
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| 変数名 | 説明 |
+|--------|------|
+| `NEXT_PUBLIC_SITE_URL` | サイトの公開URL（OGP用） |
 
-## Learn More
+`.env.*` に設定する（`.gitignore` 管理）。
 
-To learn more about Next.js, take a look at the following resources:
+## Adding Works
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
+`public/data/works.json` に以下の形式で追記する。
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```json
+[
+  {
+    "id": 1,
+    "title": "作品タイトル",
+    "image_url": "/images/works/example.png",
+    "description": "説明文",
+    "created_at": "2026-07",
+    "link_url": "https://github.com/hatano299/xxx"
+  }
+]
+```
 
-## Deploy on Vercel
+## Deploy
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+`main` ブランチへの push で Vercel が自動デプロイする。
