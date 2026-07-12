@@ -9,7 +9,6 @@ import Header from "@/components/common/Header";
  * @param description         - ページの説明。省略した場合、`APP_DEFAULT_DESCRIPTION`が設定される。
  * @param noindex             - ページを noindex にする場合、`true`を渡す。公開しない管理者ページなどを noindex にする。
  * @param titleOnlyTemplate   - ページタイトルのみを表示する場合、`true`を渡す。省略した場合、ページタイトルは`title`-`APP_NAME`になる。
- * @param isProfile           - whoami ページで、`true`を渡す。og > type が profile になる。省略した場合、og > type は website。
  * @param children            - [必須]子要素
  */
 
@@ -19,7 +18,6 @@ type PublicLayoutProps = {
   description?: string;
   noindex?: boolean;
   titleOnlyTemplate?: boolean;
-  isProfile?: boolean;
   children: React.ReactNode;
 };
 
@@ -29,7 +27,6 @@ const Layout = ({
   description = APP_DEFAULT_DESCRIPTION,
   noindex,
   titleOnlyTemplate,
-  isProfile,
   children,
 }: PublicLayoutProps): React.ReactElement => {
   // ページの絶対パス
@@ -46,7 +43,7 @@ const Layout = ({
           title,
           description,
           url: pageUrl,
-          type: isProfile ? "profile" : "website",
+          type: "website",
           siteName: APP_NAME,
         }}
         twitter={{
