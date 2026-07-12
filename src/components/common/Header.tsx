@@ -10,7 +10,7 @@ const Header = (props: Props): React.ReactElement => {
   return (
     <header className="relative py-4">
       <Container className="flex">
-        <h3 className="text-display">{title}</h3>
+        <h3 className="text-3xl font-bold text-[#AAAAAA] opacity-25">{title}</h3>
       </Container>
     </header>
   );

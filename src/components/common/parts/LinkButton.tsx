@@ -25,7 +25,7 @@ const LinkButton = (props: Props): React.ReactElement => {
           <Icon size={18} />
         </span>
       )}
-      <span className="text-card-body text-base">{label}</span>
+      <span className="text-base font-body">{label}</span>
     </>
   );
 
@@ -60,12 +60,9 @@ const BASE_CLASS =
   "relative flex items-center justify-center gap-1 rounded-md border py-2 px-4 text-center text-btn transition-all duration-200 ease-linear hover:opacity-70 disabled:opacity-100";
 // variant でリンクボタンの色を分岐
 const LINK_COLOR: Record<Props["variant"], string> = {
-  primary:
-    "border-primary bg-primary text-white disabled:border-theme-medium disabled:bg-theme-medium",
-  secondary:
-    "border-primary bg-white text-primary disabled:border-theme-medium disabled:text-theme-medium",
-  error: "border-error bg-error text-white disabled:border-theme-medium disabled:bg-theme-medium",
-  error_secondary:
-    "border-error bg-white text-error disabled:border-theme-medium disabled:text-theme-medium",
-  text: "border-transparent bg-transparent text-primary hover:border-theme-light hover:bg-theme-light disabled:border-transparent disabled:bg-transparent disabled:text-theme-medium",
+  primary: "text-white",
+  secondary: "bg-white",
+  error: "text-white",
+  error_secondary: "bg-white",
+  text: "border-transparent bg-transparent",
 };
