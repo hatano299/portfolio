@@ -58,6 +58,7 @@ body {
     height: 640px;
     overflow: hidden;
     position: relative;
+    opacity: 0.8;
   }
   .jelly-img {
     position: absolute;
@@ -73,7 +74,6 @@ body {
   }
   .jelly-card:hover .jelly-hover {
     transform: translateY(-18px);
-    filter: drop-shadow(0 12px 32px var(--glow));
   }
   .jelly-bob {
     animation: bob var(--dur) ease-in-out infinite var(--delay);
@@ -82,13 +82,25 @@ body {
     animation-play-state: paused;
   }
   .jelly-info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200px;
     opacity: 0;
     transform: translateY(5px);
-    transition: opacity 0.38s ease, transform 0.38s ease;
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+    transition: opacity 0.38s ease, transform 0.38s ease, box-shadow 0.38s ease;
   }
   .jelly-card:hover .jelly-info {
     opacity: 1;
     transform: translateY(0);
+    box-shadow: 0 20px 26px -10px var(--glow);
+  }
+  .jelly-info p {
+    transition: text-shadow 0.38s ease;
+  }
+  .jelly-card:hover .jelly-info p {
+    text-shadow: 0 0 10px var(--glow);
   }
   .jelly-arrow {
     position: absolute;
@@ -99,10 +111,12 @@ body {
     border-radius: 50%;
     opacity: 0;
     transform: scale(0.8);
-    transition: opacity 0.35s ease, transform 0.35s ease;
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+    transition: opacity 0.35s ease, transform 0.35s ease, box-shadow 0.35s ease;
   }
   .jelly-card:hover .jelly-arrow {
     opacity: 1;
     transform: scale(1);
+    box-shadow: 0 0 14px var(--glow);
   }
 }

@@ -6,7 +6,7 @@ type Props = {
   index: number;
 };
 
-const GLOW_COLORS = [
+export const GLOW_COLORS = [
   "rgba(192,132,252,0.7)",
   "rgba(244,114,182,0.7)",
   "rgba(251,191,36,0.65)",
@@ -20,7 +20,7 @@ const BOB_TIMING = [
   { dur: "4.7s", delay: "0.4s" },
 ];
 
-const JellyfishCard = ({ work, index }: Props): React.ReactElement => {
+const Jellyfish = ({ work, index }: Props): React.ReactElement => {
   const cardRef = useRef<HTMLDivElement>(null);
   const hoverRef = useRef<HTMLDivElement>(null);
   const colorIndex = index % 4;
@@ -66,21 +66,6 @@ const JellyfishCard = ({ work, index }: Props): React.ReactElement => {
               draggable={false}
               style={{ left: `${imgOffset}px` }}
             />
-            <div
-              className="jelly-info"
-              style={{
-                background: "linear-gradient(transparent, rgba(2,8,24,0.88) 55%)",
-                padding: "50px 14px 18px",
-                pointerEvents: "none",
-              }}
-            >
-              <p style={{ color: "rgba(255,255,255,0.92)", fontSize: "12.5px", fontWeight: 500, letterSpacing: "0.3px", marginBottom: "7px" }}>
-                {work.title}
-              </p>
-              <p style={{ color: "rgba(255,255,255,0.5)", fontSize: "9px", letterSpacing: "1.5px", textTransform: "uppercase" }}>
-                {yearMonth}
-              </p>
-            </div>
             <div className="jelly-arrow" style={{ top: "12px", right: "14px", width: "22px", height: "22px" }}>
               <svg
                 viewBox="0 0 10 10"
@@ -94,10 +79,27 @@ const JellyfishCard = ({ work, index }: Props): React.ReactElement => {
               </svg>
             </div>
           </div>
+          {/* overflow:hiddenのjelly-viewportの外に出し、ホバー時のglow(box-shadow)が
+              上下左右にクリップされず表示されるようにする */}
+          <div
+            className="jelly-info"
+            style={{
+              background: "linear-gradient(transparent, rgba(2,8,24,0.88) 55%)",
+              padding: "50px 14px 18px",
+              pointerEvents: "none",
+            }}
+          >
+            <p style={{ color: "rgba(255,255,255,0.92)", fontSize: "12.5px", fontWeight: 500, letterSpacing: "0.3px", marginBottom: "7px" }}>
+              {work.title}
+            </p>
+            <p style={{ color: "rgba(255,255,255,0.5)", fontSize: "9px", letterSpacing: "1.5px", textTransform: "uppercase" }}>
+              {yearMonth}
+            </p>
+          </div>
         </div>
       </div>
     </div>
   );
 };
 
-export default JellyfishCard;
+export default Jellyfish;
