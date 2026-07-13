@@ -1,5 +1,5 @@
 import Layout from "@/components/common/Layout";
-import JellyfishCard from "@/components/works/JellyfishCard";
+import WorkContainer from "@/components/works/WorkContainer";
 import worksData from "@/lib/data/works.json";
 import { ROUTES } from "@/lib/data/routes";
 import { NextPage } from "next";
@@ -10,7 +10,7 @@ const TopPage: NextPage = () => {
       <div className="flex items-center justify-center pt-8 pb-16">
         <div className="flex items-start gap-[40px]">
           {worksData.map((work, i) => (
-            <JellyfishCard key={work.id} work={work} index={i} />
+            <WorkContainer key={work.id} work={work} index={i} />
           ))}
         </div>
       </div>
