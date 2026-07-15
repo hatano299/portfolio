@@ -8,7 +8,7 @@ import Header from "@/components/common/Header";
  * @param title               - [必須]ページのタイトル。
  * @param description         - ページの説明。省略した場合、`APP_DEFAULT_DESCRIPTION`が設定される。
  * @param noindex             - ページを noindex にする場合、`true`を渡す。公開しない管理者ページなどを noindex にする。
- * @param titleOnlyTemplate   - ページタイトルのみを表示する場合、`true`を渡す。省略した場合、ページタイトルは`title`-`APP_NAME`になる。
+ * @param titleOnlyTemplate   - ページタイトルのみを表示する場合、`true`を渡す。省略した場合、ページタイトルは`title`|`APP_NAME`になる。
  * @param children            - [必須]子要素
  */
 
@@ -35,7 +35,7 @@ const Layout = ({
   return (
     <>
       <NextHeadSeo
-        title={titleOnlyTemplate ? title : `${title} - ${APP_NAME}`}
+        title={titleOnlyTemplate ? title : `${title} | ${APP_NAME}`}
         canonical={pageUrl}
         description={description}
         robots={noindex ? "noindex nofollow" : undefined}

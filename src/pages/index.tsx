@@ -6,7 +6,7 @@ import { NextPage } from "next";
 
 const TopPage: NextPage = () => {
   return (
-    <Layout path={ROUTES.WORKS} title="WORKS">
+    <Layout path={ROUTES.WORKS} title="works">
       <div className="flex items-center justify-center pt-8 pb-16">
         <div className="flex items-start gap-[40px]">
           {worksData.map((work, i) => (
