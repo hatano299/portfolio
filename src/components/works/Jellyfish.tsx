@@ -61,7 +61,7 @@ const Jellyfish = ({ work, index }: Props): React.ReactElement => {
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               className="jelly-img"
-              src="/images/jellyfish.png"
+              src="/decoration/jellyfish.png"
               alt=""
               draggable={false}
               style={{ left: `${imgOffset}px` }}

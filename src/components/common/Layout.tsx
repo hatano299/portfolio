@@ -1,5 +1,5 @@
 import NextHeadSeo from "next-head-seo";
-import { APP_DEFAULT_DESCRIPTION, APP_NAME, APP_ROOT_URL } from "@/lib/data/metaData";
+import { APP_DEFAULT_DESCRIPTION, APP_DEFAULT_OGP_IMAGE, APP_NAME, APP_ROOT_URL } from "@/lib/data/metaData";
 import Header from "@/components/common/Header";
 
 /**
@@ -45,10 +45,14 @@ const Layout = ({
           url: pageUrl,
           type: "website",
           siteName: APP_NAME,
+          image: APP_DEFAULT_OGP_IMAGE,
         }}
         twitter={{
           card: "summary_large_image",
         }}
+        customMetaTags={[
+          { key: "twitter:image", name: "twitter:image", content: APP_DEFAULT_OGP_IMAGE },
+        ]}
       />
       <div className="flex min-h-screen flex-col">
         <Header title={title}/>
