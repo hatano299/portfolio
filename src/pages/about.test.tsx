@@ -1,6 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 import AboutPage from "@/pages/about";
+import { ROUTES } from "@/lib/data/routes";
 
 describe("AboutPage", () => {
   it("名前が表示される", () => {
@@ -29,5 +30,14 @@ describe("AboutPage", () => {
     const headingElement = screen.getByRole("heading", { name: heading });
     expect(headingElement).toBeInTheDocument();
     expect(headingElement.nextElementSibling?.textContent?.length).toBeGreaterThan(0);
+  });
+
+  it("worksへ遷移するリンクがある", () => {
+    // Arrange
+    render(<AboutPage />);
+
+    // Assert
+    const linkElement = screen.getByRole("link", { name: /works/ });
+    expect(linkElement).toHaveAttribute("href", ROUTES.WORKS);
   });
 });

@@ -1,6 +1,7 @@
 import Layout from "@/components/common/Layout";
 import { ROUTES } from "@/lib/data/routes";
 import { NextPage } from "next";
+import Link from "next/link";
 
 const AboutPage: NextPage = () => {
   return (
@@ -28,10 +29,14 @@ const AboutPage: NextPage = () => {
             <li>2024 基本情報技術者</li>
           </ul>
         </section>
-        <section>
+        <section className="mb-12">
           <h2 className="text-xl font-semibold mb-4">目標</h2>
           <p className="text-card-body">1万人が使用するサービスの開発</p>
         </section>
+        <hr className="border-white/10 mb-12" />
+        <Link href={ROUTES.WORKS} className="text-card-body text-white/60">
+          → works
+        </Link>
       </div>
     </Layout>
   );
