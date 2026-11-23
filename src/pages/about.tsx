@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const AboutPage: NextPage = () => {
   return (
-    <Layout path={ROUTES.ABOUT} title="about hatano">
+    <Layout path={ROUTES.ABOUT} title="about">
       <div className="mx-auto max-w-xl px-6 pb-12">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
@@ -35,7 +35,7 @@ const AboutPage: NextPage = () => {
         </section>
         <hr className="border-white/10 mb-12" />
         <Link href={ROUTES.WORKS} className="text-card-body text-white/60">
-          → works
+          works
         </Link>
       </div>
     </Layout>
