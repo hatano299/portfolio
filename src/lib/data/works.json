@@ -1,11 +1,11 @@
 [
   {
     "id": 1,
-    "title": "dummyサイト1",
-    "image_url": "/works/1.png",
-    "description": "xxxを扱うdummyサイト",
+    "title": "about hatano",
+    "image_url": "/favicon/apple-touch-icon.png",
+    "description": "Yota Hatanoの自己紹介ページです。経歴や目標を紹介しています。",
     "created_at": "2026-07-12",
-    "link_url": "https://sakurazaka46.com/s/s46/diary/detail/70167"
+    "link_url": "/about"
   },
   {
     "id": 2,
