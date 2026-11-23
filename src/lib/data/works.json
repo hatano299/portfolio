@@ -1,11 +1,11 @@
 [
   {
     "id": 1,
-    "title": "dummyサイト1",
-    "image_url": "/works/1.png",
-    "description": "xxxを扱うdummyサイト",
-    "created_at": "2026-07-12",
-    "link_url": "https://sakurazaka46.com/s/s46/diary/detail/70167"
+    "title": "about",
+    "image_url": "/favicon/apple-touch-icon.png",
+    "description": "hatano の自己紹介ページです",
+    "created_at": "2026-11-23",
+    "link_url": "/about"
   },
   {
     "id": 2,

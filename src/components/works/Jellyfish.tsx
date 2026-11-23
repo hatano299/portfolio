@@ -1,4 +1,5 @@
 import { useRef } from "react";
+import { useRouter } from "next/router";
 import type { Work } from "@/lib/types/work";
 
 type Props = {
@@ -21,6 +22,7 @@ const BOB_TIMING = [
 ];
 
 const Jellyfish = ({ work, index }: Props): React.ReactElement => {
+  const router = useRouter();
   const cardRef = useRef<HTMLDivElement>(null);
   const hoverRef = useRef<HTMLDivElement>(null);
   const colorIndex = index % 4;
@@ -29,7 +31,11 @@ const Jellyfish = ({ work, index }: Props): React.ReactElement => {
   const yearMonth = work.created_at.slice(0, 7);
 
   const handleClick = () => {
-    window.open(work.link_url, "_blank", "noopener");
+    if (work.link_url.startsWith("/")) {
+      router.push(work.link_url);
+    } else {
+      window.open(work.link_url, "_blank", "noopener");
+    }
 
     const el = hoverRef.current;
     if (!el) return;
