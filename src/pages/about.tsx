@@ -7,12 +7,16 @@ const AboutPage: NextPage = () => {
     <Layout path={ROUTES.ABOUT} title="about hatano">
       <div className="mx-auto max-w-xl px-6 pb-12">
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img className="mb-12 h-36 w-36 rounded-full" src="/favicon/apple-touch-icon.png" alt="" />
+        <img
+          className="mb-12 h-36 w-36 rounded-full"
+          src="/favicon/apple-touch-icon.png"
+          alt="Yota Hatano のプロフィール画像"
+        />
         <div className="mb-12">
           <h1 className="text-2xl font-semibold mb-2">Yota Hatano</h1>
           <ul className="text-card-body space-y-1">
-            <li>エンジニア</li>
             <li>山口県出身</li>
+            <li>エンジニア</li>
             <li>朝活とサウナがすき</li>
           </ul>
         </div>
