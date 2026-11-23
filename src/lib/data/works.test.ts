@@ -9,7 +9,7 @@ describe("works.json", () => {
 
     // Assert
     expect(aboutWork).toBeDefined();
-    expect(aboutWork?.title).toBe("about hatano");
+    expect(aboutWork?.title).toBe("about");
     expect(aboutWork?.image_url).toBe("/favicon/apple-touch-icon.png");
   });
 });
